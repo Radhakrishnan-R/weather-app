@@ -81,12 +81,12 @@ h2 {
 
 .col {
     display: flex;
-    gap: 1rem;
+    gap: 10px;
     text-align: left;
 }
 
 .col img {
-    width: 40px;
+    width: 20%;
 }
 
 .humidity, .wind {
