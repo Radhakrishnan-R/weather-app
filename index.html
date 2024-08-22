@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css?v=5" />
+    <link rel="stylesheet" href="./style.css" />
 </head>
     <div class="container">
         <div class="search-box">
@@ -12,7 +12,7 @@
             <button><img src="./Asset/images/search.png" alt="search-button"></button>
         </div>
         <div class="error">
-            <p></p>
+            <p>City not found try again</p>
         </div>
         <div class="weather">
             <img src="./Asset/images/clouds.png" alt="cloudy">
@@ -54,10 +54,8 @@
             console.log(result.cod);
 
 
-            if(result.cod == 400){
-                document.querySelector(".error").innerHTML = "Enter city name";
-            }else if(result.cod == 404){
-                document.querySelector(".error").innerHTML = "City not found try again";
+           if(result.cod == 404){
+                document.querySelector(".error").style.display = "block";
             }else {
                 document.querySelector(".error").style.display = "none";
                 document.querySelector("h2").innerHTML = result.name;
@@ -88,7 +86,6 @@
         }
 
     }
-
 
 
         searchBtn.addEventListener("click", () => {
